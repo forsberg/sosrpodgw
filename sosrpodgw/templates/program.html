@@ -1,0 +1,18 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}SR POD Gateway{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+  <h1>Tillgängliga podfiler)</h1>
+
+  <ul class="list-unstyled">
+    {% for podfile in podfiles %}
+    <li><a href="{{ url_for('podplay', podid=podfile.id) }}">{{ podfile.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

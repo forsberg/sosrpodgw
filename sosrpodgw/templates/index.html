@@ -1,0 +1,18 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}SR POD Gateway{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+  <h1>Tillgängliga program (med POD)</h1>
+
+  <ul class="list-unstyled">
+    {% for program in programs %}
+    <li><a href="{{ url_for('program',id=program.id) }}">{{ program.name }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
